@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Bills" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.BillsController">
+  <content>
+      <VBox layoutX="9.0" prefHeight="358.0" prefWidth="572.0">
+         <children>
+            <HBox prefHeight="17.0" prefWidth="578.0">
+               <children>
+                  <Label text="Filter by">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="8.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </Label>
+                  <DatePicker fx:id="dateFilterDatePicker" prefHeight="25.0" prefWidth="99.0" promptText="Date of bill">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </DatePicker>
+                  <ComboBox fx:id="providerFilterComboBox" prefHeight="25.0" prefWidth="109.0" promptText="Provider">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="categoryFilterComboBox" prefHeight="25.0" prefWidth="108.0" promptText="Category">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <CheckBox fx:id="isPaidFilterCheckbox" mnemonicParsing="false" text="Is Paid">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <Button fx:id="deleteBillBtn" mnemonicParsing="false" text="Delete record">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="billTableView" prefHeight="298.0" prefWidth="578.0">
+              <columns>
+                <TableColumn fx:id="billIdTableColumn" prefWidth="61.0" text="Number" />
+                <TableColumn fx:id="billNumberTableColumn" prefWidth="97.0" text="Bill Number" />
+                  <TableColumn fx:id="billDateTableColumn" prefWidth="77.0" text="Date" />
+                  <TableColumn fx:id="billProviderTableColumn" prefWidth="66.0" text="Provider" />
+                  <TableColumn fx:id="billCategoryTableColumn" prefWidth="74.0" text="Category" />
+                  <TableColumn fx:id="billPaidTableColumn" prefWidth="75.0" text="Is Paid" />
+                  <TableColumn fx:id="billDatePayTableColumn" prefWidth="75.0" text="Date of Pay" />
+                  <TableColumn fx:id="billSummTableColumn" prefWidth="60.0" text="Summ" />
+              </columns>
+            </TableView>
+            <HBox prefHeight="26.0" prefWidth="578.0">
+               <children>
+                  <TextField fx:id="newBillNumberTxt" prefHeight="25.0" prefWidth="94.0" promptText="Number of Bill">
+                     <HBox.margin>
+                        <Insets right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <DatePicker fx:id="newBillDate" prefHeight="25.0" prefWidth="97.0" promptText="Date of bill">
+                     <HBox.margin>
+                        <Insets right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </DatePicker>
+                  <ComboBox fx:id="newBillProvider" prefHeight="25.0" prefWidth="93.0" promptText="Provider">
+                     <HBox.margin>
+                        <Insets right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="newBillCategory" prefHeight="25.0" prefWidth="94.0" promptText="Category">
+                     <HBox.margin>
+                        <Insets right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <TextField fx:id="newBillSumm" prefHeight="25.0" prefWidth="56.0" promptText="Summ">
+                     <HBox.margin>
+                        <Insets right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="submitBillBtn" mnemonicParsing="false" onAction="#showPopup" text="Submit">
+                     <HBox.margin>
+                        <Insets right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <TextField fx:id="toPayTxt" editable="false" prefHeight="25.0" prefWidth="58.0">
+                     <HBox.margin>
+                        <Insets right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+  </content>
+</TitledPane>
