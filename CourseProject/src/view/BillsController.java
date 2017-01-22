@@ -1,9 +1,5 @@
 package view;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.time.LocalDate;
 
 import javafx.collections.FXCollections;
@@ -26,7 +22,6 @@ import model.Provider;
 import utils.Utils;
 
 public class BillsController {
-	@FXML private DatePicker dateFilterDatePicker;
 	@FXML private ComboBox<String> providerFilterComboBox;
 	@FXML private ComboBox<String> categoryFilterComboBox;
 	@FXML private CheckBox isPaidFilterCheckbox;

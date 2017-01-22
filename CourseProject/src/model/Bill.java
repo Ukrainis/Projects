@@ -7,16 +7,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import utils.Utils;
 import view.BillsController;
 
@@ -150,8 +145,25 @@ public class Bill implements DataBaseMethods {
 
 	@Override
 	public boolean deleteDataFromDB() {
-		// TODO Auto-generated method stub
-		return true;
+		boolean result = false;
+		Connection conn = Utils.getDbConnection();
+		PreparedStatement pstmt = null;
+		String query = "DELETE FROM BILL WHERE BILL_ID = ?";
+		try {
+			System.out.println("Begining.");
+			pstmt = conn.prepareStatement(query);
+			System.out.println("Prepared statement created.");
+			System.out.println("Setting parameter as - " + this.getBillId());
+			pstmt.setInt(1, this.getBillId());
+			pstmt.executeUpdate();
+			System.out.println("Query is executed.");
+			result = true;
+			Utils.closeConnection(conn);
+		} catch (SQLException e) {
+			System.out.println("Can't create prepared statement or execute query: " + query);
+			return result;
+		}
+		return result;
 	}
 	
 	public static void getBills() {
@@ -182,7 +194,7 @@ public class Bill implements DataBaseMethods {
 
 	@Override
 	public boolean updateDataInDB() {
-		// TODO Auto-generated method stub
+		// TODO Implement Pay method.
 		return false;
 	}
 }

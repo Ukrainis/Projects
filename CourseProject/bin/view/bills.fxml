@@ -19,11 +19,6 @@
                         <Insets left="5.0" right="5.0" />
                      </padding>
                   </Label>
-                  <DatePicker fx:id="dateFilterDatePicker" prefHeight="25.0" prefWidth="99.0" promptText="Date of bill">
-                     <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </DatePicker>
                   <ComboBox fx:id="providerFilterComboBox" prefHeight="25.0" prefWidth="109.0" promptText="Provider">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -34,7 +29,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </ComboBox>
-                  <CheckBox fx:id="isPaidFilterCheckbox" mnemonicParsing="false" text="Is Paid">
+                  <CheckBox fx:id="isPaidFilterCheckbox" mnemonicParsing="false" text="Not Paid">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
                      </HBox.margin>
