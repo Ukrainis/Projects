@@ -66,7 +66,6 @@ public abstract class Utils {
 			System.out.println("Should be inserted " + count.length + " records for Database structure creation.");
 		} catch (SQLException e) {
 			System.out.println("Failed to create a structure of the Database.");
-		}
-		
+		}		
 	}
 }

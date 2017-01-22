@@ -197,4 +197,8 @@ public class Bill implements DataBaseMethods {
 		// TODO Implement Pay method.
 		return false;
 	}
+	
+	public static int getUnpaidSumm() {
+		return 0;
+	}
 }
