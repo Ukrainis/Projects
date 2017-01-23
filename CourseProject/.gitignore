@@ -1,2 +1,4 @@
+## Generated Java classes
 *.class
+## Application Database folder
 /db
