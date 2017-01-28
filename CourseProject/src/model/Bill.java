@@ -162,6 +162,8 @@ public class Bill implements DataBaseMethods {
 		} catch (SQLException e) {
 			System.out.println("Can't create prepared statement or execute query: " + query);
 			return result;
+		} finally {
+			Utils.closeConnection(conn);
 		}
 		return result;
 	}
@@ -198,7 +200,22 @@ public class Bill implements DataBaseMethods {
 		return false;
 	}
 	
-	public static int getUnpaidSumm() {
-		return 0;
+	public static double getUnpaidSumm() {
+		double result = 0;
+		Connection conn = Utils.getDbConnection();
+		String query = "SELECT SUM(SUMM) FROM BILL WHERE IS_PAID = FALSE";
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(query);
+			rs.next();
+			result = rs.getDouble(1);
+			Utils.closeConnection(conn);
+		} catch (SQLException sqe) {
+			System.out.println("Can't create statement or execute query: " + query);
+			return result;
+		} finally {
+			Utils.closeConnection(conn);
+		}
+		return result;
 	}
 }

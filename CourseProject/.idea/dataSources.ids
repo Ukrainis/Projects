@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="H2 - db" uuid="d963b9ac-483e-49e1-be12-ae53ba397944">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+    <schema name="PUBLIC" catalog="DB"/>
+  </data-source>
+</component>

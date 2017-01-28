@@ -56,6 +56,7 @@ public class BillsController {
 //		providerFilterComboBox.valueProperty().addListener(arg0); TODO for filtering. Create after Insert into DB method will be ready.
 		Bill.getBills();
 		System.out.println("Bill size - " + bills.size());
+		getSummToPay();
 		billIdTableColumn.setCellValueFactory(x -> x.getValue().billIdProperty().asObject());
 		billNumberTableColumn.setCellValueFactory(x -> x.getValue().billNumberProperty());
 		billDateTableColumn.setCellValueFactory(x -> x.getValue().billDateProperty());
@@ -82,6 +83,7 @@ public class BillsController {
 				Double.parseDouble(newBillSumm.getText())).insertDataIntoDB();
 		clearBills();
 		Bill.getBills();
+		getSummToPay();
 /*		Bill selected = billTableView.getSelectionModel().getSelectedItem();
 	    System.out.println("CheckBox Action (selected: " + selected.getBillPaid() + ")");
 	    selected.billPaidProperty().set(true);
@@ -106,6 +108,11 @@ public class BillsController {
 	
 	public static void fillProviders(String category) {
 		dropdownProviders.add(category);
+	}
+
+	public void getSummToPay() {
+		toPayTxt.clear();
+		toPayTxt.setText(Double.toString(Bill.getUnpaidSumm()));
 	}
 
 }
