@@ -2,3 +2,4 @@
 *.class
 ## Application Database folder
 /db
+/bin
